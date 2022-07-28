@@ -10,7 +10,7 @@ plr.Character.Humanoid.HealthChanged:Connect(function(newhp)
     local totalhp = math.abs(plr.Character.Humanoid.Health - newhp)
     local events = repst.Events;
     if totalhp == 0 then
-        wait(3)
+        wait(5)
         events.revv:FireServer()
     end
 end)
