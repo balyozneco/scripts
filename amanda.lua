@@ -1,4 +1,7 @@
---hello my friend, made by stern#9792
+--[[
+    hello my friend, made by stern#9792
+    game link: https://www.roblox.com/games/9800759618/Amanda-Story
+]]
 
 local plr = game:GetService("Players").LocalPlayer;
 local repst = game:GetService("ReplicatedStorage");
