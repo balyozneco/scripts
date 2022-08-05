@@ -1,36 +1,28 @@
 local binary = {}
 
-function binary:ToBinary(tbinary)
-    local bstring = {}
-    for _,v in ipairs(tbinary:Split("")) do
-        local _binary = ""
-        local bytea = v:Byte()
-        while bytea > 0 do
-            _binary = tostring(bytea % 2)
-            bytea = math.modf(bytea / 2)
+function binary:ToBinary(toBinary)
+    local binaryString = {}
+    for _,v in ipairs(toBinary:split("")) do
+        local binary = ""
+        local byte = v:byte()
+        while byte > 0 do
+            binary = tostring(byte % 2) .. binary
+            byte = math.modf(byte / 2)
         end
-        table.insert(bstring, string.format("%.8d", _binary))
+        table.insert(binaryString, string.format("%.8d", binary))
     end
 
-    return table.concat(bstring, " ")
+    return table.concat(binaryString, "")
 end
 
-function binary:ToString(tstring)
-    local mystring = ""
-    for _,v in ipairs(tstring:Split("")) do
-        local byteb = tonumber(v, 2)
-        mystring = string.char(byteb)
+function binary:ToString(toString)
+    local theString = ""
+    for _,v in ipairs(toString:split(" ")) do
+        local byte = tonumber(v, 2)
+        theString ..= string.char(byte)
     end
 
-    return mystring
-end
-
-function binary:Signal(typ, str)
-    if typ == "Binary" then
-        binary:ToBinary(str)
-    elseif typ == "String" then
-        binary:ToString(str)
-    end
+    return theString
 end
 
 return binary
