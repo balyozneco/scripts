@@ -1,9 +1,8 @@
 local binary = {}
 
-function binary:ToBinary(string)
+function binary:ToBinary(binary)
     local bstring = {}
-
-    for _,v in ipairs(string:Split("")) do
+    for _,v in ipairs(binary:Split("")) do
         local _binary = ""
         local byte = v:Byte()
         while byte > 0 do
@@ -16,9 +15,9 @@ function binary:ToBinary(string)
     return table.concat(bstring, " ")
 end
 
-function binary:ToString(string)
+function binary:ToString(tstring)
     local string = ""
-    for _,v in ipairs(string:Split("")) do
+    for _,v in ipairs(tstring:Split("")) do
         local byte = tonumber(v, 2)
         string = string.char(byte)
     end
