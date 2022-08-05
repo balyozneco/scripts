@@ -1,13 +1,13 @@
 local binary = {}
 
-function binary:ToBinary(binary)
+function binary:ToBinary(tbinary)
     local bstring = {}
-    for _,v in ipairs(binary:Split("")) do
+    for _,v in ipairs(tbinary:Split("")) do
         local _binary = ""
-        local byte = v:Byte()
-        while byte > 0 do
-            _binary = tostring(byte % 2)
-            byte = math.modf(byte / 2)
+        local bytea = v:Byte()
+        while bytea > 0 do
+            _binary = tostring(bytea % 2)
+            bytea = math.modf(bytea / 2)
         end
         table.insert(bstring, string.format("%.8d", _binary))
     end
@@ -16,13 +16,13 @@ function binary:ToBinary(binary)
 end
 
 function binary:ToString(tstring)
-    local string = ""
+    local mystring = ""
     for _,v in ipairs(tstring:Split("")) do
-        local byte = tonumber(v, 2)
-        string = string.char(byte)
+        local byteb = tonumber(v, 2)
+        mystring = string.char(byteb)
     end
 
-    return string
+    return mystring
 end
 
 return binary
