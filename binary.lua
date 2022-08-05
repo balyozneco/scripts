@@ -2,7 +2,7 @@ local binary = {}
 
 function binary:ToBinary(toBinary)
     local binaryString = {}
-    for _,v in ipairs(toBinary:split("")) do
+    for _,v in ipairs(toBinary:split"") do
         local binary = ""
         local byte = v:byte()
         while byte > 0 do
@@ -17,7 +17,7 @@ end
 
 function binary:ToString(toString)
     local theString = ""
-    for _,v in ipairs(toString:split(" ")) do
+    for _,v in ipairs(toString:split" ") do
         local byte = tonumber(v, 2)
         theString ..= string.char(byte)
     end
