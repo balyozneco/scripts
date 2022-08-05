@@ -25,4 +25,12 @@ function binary:ToString(tstring)
     return mystring
 end
 
+function binary:Signal(typ, str)
+    if typ == "Binary" then
+        binary:ToBinary(str)
+    elseif typ == "String" then
+        binary:ToString(str)
+    end
+end
+
 return binary
