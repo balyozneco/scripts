@@ -16,7 +16,7 @@ function binary:ToBinary(toBinary)
     return table.concat(binaryString, "")
 end
 
-function binaryToString(BinaryString)
+function binary:ToString(BinaryString)
 	local String = ""
 	
 	for i, Binary in ipairs(BinaryString:split' ') do --> ex: {"01000001", "01000010", "01000011"}
