@@ -1,6 +1,6 @@
 local binary = {}
 
-function binary:ToBinary(toBinary)
+local function ToBinary(toBinary)
     local binaryString = {}
 
     for _,v in ipairs(toBinary:split'') do
@@ -16,7 +16,7 @@ function binary:ToBinary(toBinary)
     return table.concat(binaryString, "")
 end
 
-function binary:ToString(BinaryString)
+local function ToString(BinaryString)
 	local String = ""
 	
 	for i, Binary in ipairs(BinaryString:split' ') do --> ex: {"01000001", "01000010", "01000011"}
